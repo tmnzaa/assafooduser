@@ -3,47 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Assa Food 99</title>
+  <title>Assa Food</title>
   <!-- Tambah manifest -->
   <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#c62828" />
+  <meta name="theme-color" content="#0B611D" />
 
-  <style>
+    <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       background-color: #fff8d1;
-      color: #5d001e;
+      color: #0B611D;
       font-size: 14px;
     }
+
     header {
-      background-color: #ffd54f;
+      background-color: #FFDC00;
       padding: 15px;
       text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
+
     header h1 {
       margin: 0;
       font-size: 2em;
       letter-spacing: 1px;
     }
+
     header p {
       margin: 5px 0;
       font-size: 1em;
       font-weight: 600;
     }
+
     section {
       max-width: 600px;
       margin: auto;
       padding: 20px;
     }
+
     section h2 {
       text-align: center;
       margin-bottom: 10px;
       font-size: 1.5em;
-      border-bottom: 2px solid #c62828;
+      border-bottom: 2px solid #0B611D;
       display: inline-block;
       padding-bottom: 5px;
     }
+
     .product-card, .testimoni-card, .review-card {
       background-color: #fff3cd;
       border-radius: 15px;
@@ -54,61 +65,71 @@
       transition: transform 0.3s;
       cursor: pointer;
     }
+
     .product-card:hover, .testimoni-card:hover, .review-card:hover {
       transform: translateY(-3px);
     }
+
     .product-card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
       border-radius: 10px;
     }
+
     .rating {
-      color: #ffc107;
+      color: #FFDC00;
       margin: 5px 0;
     }
+
     button {
       display: block;
       width: 100%;
       margin-top: 10px;
       padding: 8px;
       font-size: 0.9em;
-      background-color: #c62828;
+      background-color: #0B611D;
       color: #fff;
       border: none;
       border-radius: 30px;
       cursor: pointer;
       transition: background-color 0.3s;
     }
+
     button:hover {
-      background-color: #8e0000;
+      background-color: #064d14;
     }
+
     footer {
       text-align: center;
-      background-color: #ffd54f;
+      background-color: #FFDC00;
       padding: 15px;
       font-size: 0.85em;
     }
+
     footer a {
-      color: #c62828;
+      color: #0B611D;
       text-decoration: none;
       font-weight: bold;
     }
+
     .review-form input, .review-form select, .review-form textarea {
       width: 100%;
       padding: 8px;
       margin: 5px 0;
       border-radius: 10px;
-      border: 1px solid #c62828;
+      border: 1px solid #0B611D;
       font-size: 0.9em;
       resize: vertical;
     }
+
     .stars {
       display: flex;
       justify-content: center;
       margin: 12px 0;
       cursor: pointer;
     }
+
     .stars span {
       font-size: 2em;
       color: #ccc;
@@ -116,11 +137,12 @@
       transition: color 0.3s;
       user-select: none;
     }
+
     .stars span.hover,
     .stars span.selected {
-      color: #c62828;
+      color: #0B611D;
     }
-    /* Modal styles */
+
     .modal {
       display: none;
       position: fixed;
@@ -131,6 +153,7 @@
       justify-content: center;
       align-items: center;
     }
+
     .modal-content {
       background: #fff;
       border-radius: 15px;
@@ -140,6 +163,7 @@
       text-align: center;
       position: relative;
     }
+
     .modal-content img {
       width: 100%;
       height: 200px;
@@ -147,28 +171,30 @@
       border-radius: 10px;
       margin-bottom: 10px;
     }
+
     .close-btn {
       position: absolute;
-      top: 10px; right: 15px;
+      top: 10px;
+      right: 15px;
       font-size: 1.5em;
       cursor: pointer;
-      color: #c62828;
+      color: #0B611D;
     }
+
     .product-card {
-    position: relative; /* Supaya bintang bisa posisi absolut relatif ke kartu */
+      position: relative;
     }
 
     .favorite-star {
       position: absolute;
       top: 10px;
       right: 10px;
-      color: #c62828; /* Merah maroon */
+      color: #0B611D;
       font-size: 1.5em;
-      pointer-events: none; /* Biar nggak ganggu klik tombol */
+      pointer-events: none;
       user-select: none;
       filter: drop-shadow(0 0 2px rgba(0,0,0,0.3));
     }
-
   </style>
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
@@ -310,16 +336,23 @@
 </head>
 <body>
 
-<header>
-  <h1>Assa Food 99</h1>
-  <p>Rasa Maknyusss, Pesan di GoFood Sekarang!</p>
+<header style="background-color: #FFDC00; padding: 15px; display: flex; align-items: center;">
+  <!-- Logo Bulat -->
+  <img src="logo.png" alt="Logo Assa Food"
+       style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-right: 15px;">
+
+  <!-- Teks di sebelah logo -->
+  <div>
+    <h1 style="margin: 0; font-size: 1.6em;">Assa Food.</h1>
+    <p style="margin: 0; font-size: 0.95em;">Rasa Terjamin, Pesan di GoFood Sekarang!</p>
+  </div>
 </header>
 
 <section>
-  <h2>Kenapa Assa Food 99?</h2>
+  <h2>Kenapa Assa Food?</h2>
   <p style="text-align: center;">
     Karena kami bukan sekedar jualan — kami jualan <strong>senyum & kebahagiaan</strong>!
-    Lembut di luar, gurih di dalam. Mau nyoba? 😋
+    Gapercaya? Cobain. 😋
   </p>
 </section>
 
@@ -404,9 +437,9 @@
 </section>
 
 <footer>
-  📱 Admin: <a href="https://wa.me/628123456789">+62 812-3456-789</a> |
-  📸 IG: <a href="https://instagram.com/tahususumanik">@tahususumanik</a><br />
-  &copy; 2025 AssaFood99. Semua hak dilindungi.
+  📱 Admin: <a href="https://wa.me/6281334715988">+62 813-3471-5988</a> |
+  📸 IG: <a href="https://www.instagram.com/assafood.sby/?igsh=MmozMzRvdDAzczRv#">@assafood.sby</a><br />
+  &copy; 2025 AssaFood. Semua hak dilindungi.
 </footer>
 
 <script>
@@ -423,7 +456,7 @@
     <img id="modal-img" src="" alt="Detail Produk" />
     <h3 id="modal-title"></h3>
     <p id="modal-desc"></p>
-    <button id="modal-order" style="background-color:#c62828; color:#fff; border:none; padding:10px; border-radius:20px; cursor:pointer;">
+    <button id="modal-order" style="background-color:#0B611D; color:#fff; border:none; padding:10px; border-radius:20px; cursor:pointer;">
       Pesan di GoFood
     </button>
   </div>
